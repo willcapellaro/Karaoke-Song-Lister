@@ -5,6 +5,17 @@
   min-width: 300px;  
 }
 
+a {
+  background-color: red;
+  color: yellow;
+  font-size: 14px;
+  margin: 1em 1.5em;
+  padding: .5em;
+  font-weight: bold;
+  text-decoration: none;
+ 
+}
+
 tr {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -23,9 +34,16 @@ th, td {
 
 }
 
+tbody tr td:first-of-type {
+font-size: 12px;
+  font-weight: bold;
+  padding-left: 0px;
+
+}
 
 td&:first-child {
   padding-top: .5em;
+
 }
 
 td&:last-child {
@@ -42,19 +60,22 @@ td&:before {
 
 
 body {
-  padding: 0 2em;
+  padding: 0 1em;
   font-family: Montserrat, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   color: #444;
-  background: #34495E;
+  background: #34495E; /*#34495E*/
 }
 
 .light-table-filter   {
   font-family: "Montserrat, sans-serif";
   font-weight: normal;
+  font-size: 20px;
+  height: 30px;
   padding: 10px;
-  width: 600px
+  width: 100%;
+  max-width: 600px;
 } 
 
 h1 {
@@ -73,18 +94,68 @@ h1 {
 .rwd-table tr {
   border-color: lighten(#34495E, 10%);
 }
+.rwd-table tr td {. /*this one here---not working!*/
+  font-size: 10px;
+}
 .rwd-table th, .rwd-table td {
-  margin: .5em 1em;
+  margin: .5em 0em;
 }
 
 .rwd-table th, .rwd-table td:before {
   color: #dd5;
 }
 
-@media (min-width: 480px) {
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (min-width: 480px) {. /*------------------------------*/
   td {
     display: none;
   }
+
+
+tbody tr td:first-of-type {
+font-size: inherit;
+}
+
+  body {
+  background: #34495E;
+}
 
   td, th {
     display: table-cell;
@@ -100,6 +171,6 @@ h1 {
   }
 
   .rwd-table {
-    padding: 1em !important; 
+    padding: 1em 0em !important; 
   }
 }
